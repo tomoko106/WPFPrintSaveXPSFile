@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="WPFPrintSaveXPSFile.ReportCtrl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:vm="clr-namespace:WPFPrintSaveXPSFile"
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+            xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+            xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+            xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" 
+            mc:Ignorable="d" d:DesignWidth="793.70" Height="242">
+
+
+    <UserControl.DataContext>
+        <vm:MainWindowViewModel />
+    </UserControl.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="66*"></RowDefinition>
+            <RowDefinition Height="101*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Estimate"
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   HorizontalAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   Margin="0,0,0,0" Width="103" Height="35" VerticalAlignment="Bottom" 
+                   FontSize="18"/>
+        <Canvas Grid.Row="1" Margin="0,0,0,0" >
+            <TextBlock Width="361">Name</TextBlock>
+            <TextBlock Text="{Binding Name.Value}" 
+                        FontFamily="ＭＳ　ゴシック"
+                        FontWeight="Bold"
+                        FontSize="18"
+                        Width="365" 
+                        Canvas.Top="18"
+                        />
+            <Line Canvas.Top="39" Canvas.Left="0" X1="0" Y1="0" X2="350" Y2="0" StrokeThickness="1" Stroke="Black"></Line>
+
+        </Canvas>
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+            <TextBlock HorizontalAlignment="Center">請求額</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="18" Text="{Binding Amount.Value, StringFormat={}{0:C}, ConverterCulture=ja-JP}"></TextBlock>
+            <Line Canvas.Top="39" HorizontalAlignment="Center" X1="0" Y1="0" X2="150" Y2="0" StrokeThickness="1" Stroke="Black"></Line>
+        </StackPanel>
+    </Grid>
+
+
+</UserControl>

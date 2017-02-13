@@ -25,6 +25,7 @@ namespace WPFPrintSaveXPSFile
             InitializeComponent();
         }
 
+        /*
         /// <summary>
         /// 
         /// </summary>
@@ -51,5 +52,6 @@ namespace WPFPrintSaveXPSFile
             pc.Child = fixedPage;
             fixedDocument.Pages.Add(pc);
         }
+         */
     }
 }

@@ -40,16 +40,12 @@
             <DocumentViewer.ContextMenu>
                 <ContextMenu />
             </DocumentViewer.ContextMenu>
-
-            
-
             <!-- <FixedDocument Loaded="FixedDocument_Loaded" /> -->
         </DocumentViewer>
         <Button Content="Print and Save xps file" Grid.Row="2">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <l:LivetCallMethodAction MethodTarget="{Binding Mode=OneWay}" MethodName="Print"/>
-
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>

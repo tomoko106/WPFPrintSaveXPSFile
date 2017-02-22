@@ -67,15 +67,19 @@ namespace WPFPrintSaveXPSFile
         /// <summary>
         /// Set up Document
         /// </summary>
+        /// <remarks>
+        /// if you use this class both @mainview & @reportcontrol for datacontext
+        /// do not call this function at intitialize method.
+        /// </remarks>
         public void SetDoc()
         {
 
 
             // Set the ReportTemplateContorl to fixedpage
             FixedDocument fixedDoc = new FixedDocument();
-            ReportCtrl report = new ReportCtrl();
+            // ReportCtrl report = new ReportCtrl();
 
-            ReportCtrl myReport = report as ReportCtrl;
+            ReportCtrl myReport = new ReportCtrl();
             myReport.DataContext = this;
 
             PageContent pageContent = new PageContent();
